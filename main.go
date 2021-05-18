@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"os"
+    "github.com/mutaboss/encrypt/util"
+    "github.com/mutaboss/encrypt/cipher"
 )
 
 // ************************************************************************************************
@@ -10,7 +12,7 @@ import (
 // ************************************************************************************************
 
 func main() {
-	terminal := NewTerminal(os.Stdin, os.Stdout)
+	terminal := util.NewTerminal(os.Stdin, os.Stdout)
 	for {
 		terminal.Prompt()
 		line := terminal.ReadLine()
@@ -18,7 +20,7 @@ func main() {
 			break
 		}
 		plaintext := line[:len(line)-1] // remove terminating newline
-		ciphertext := RailFenceCipherEncrypt(plaintext)
-		fmt.Printf("%s => %s => %s\n", plaintext, ciphertext, RailFenceCipherDecrypt(ciphertext))
+		ciphertext := cipher.RailFenceCipherEncrypt(plaintext)
+		fmt.Printf("%s => %s => %s\n", plaintext, ciphertext, cipher.RailFenceCipherDecrypt(ciphertext))
 	}
 }
