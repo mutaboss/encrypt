@@ -1,8 +1,8 @@
 package cipher
 
 import (
-    "crypto/rand"
-    "math/big"
+	"crypto/rand"
+	"math/big"
 )
 
 // ************************************************************************************************
@@ -29,9 +29,9 @@ func PadChar() byte {
 
 func RailFenceCipherEncrypt(plaintext string) string {
 	padding := 4 - (len(plaintext) % 4)
-    if padding == 4 {
-        padding = 0
-    }
+	if padding == 4 {
+		padding = 0
+	}
 	plainb := []byte(plaintext)
 	for i := 0; i < padding; i++ {
 		plainb = append(plainb, PadChar())

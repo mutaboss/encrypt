@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
+	"github.com/mutaboss/encrypt/cipher"
+	"github.com/mutaboss/encrypt/util"
 	"os"
-    "github.com/mutaboss/encrypt/util"
-    "github.com/mutaboss/encrypt/cipher"
 )
 
 // ************************************************************************************************
