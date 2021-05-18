@@ -40,4 +40,3 @@ func (term *Terminal) Prompt() {
 	term.out.Write([]byte("> "))
 	term.out.Flush()
 }
-
